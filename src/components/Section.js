@@ -1,14 +1,18 @@
 import React from 'react'
 import styled  from 'styled-components'
+import Fade  from 'react-reveal/Fade';
 
 function Section(props) {
     return (
         <Wrap bgImage={props.backgroundImg}>
+            <Fade bottom>
             <ItemText>
                 <h1>{props.title}</h1>
                 <p>{props.description}</p>
             </ItemText>
+            </Fade>
             <Buttons>
+            <Fade bottom>
             <ButtonGroup>
                 <LeftButton>
                     {props.leftBtnText}
@@ -21,6 +25,7 @@ function Section(props) {
                 
             </ButtonGroup>
             <DownArrow src="https://www.pinclipart.com/picdir/middle/130-1304123_drop-down-arrow-svg-png-icon-free-download.png"/>
+            </Fade>
             </Buttons>
         </Wrap>
     )
@@ -43,7 +48,7 @@ align-items:center; //horizontal;
 background-image:${props=>`url("${props.bgImage}")`}
 `
 const ItemText=styled.div`
-paddind-top=15vh;
+padding-top:15vh;
 text-align:center;
 `
 
